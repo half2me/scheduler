@@ -1,0 +1,26 @@
+{
+    "name": "halftome/scheduler",
+    "description": "An advanced scheduler for CakePHP",
+    "type": "cakephp-plugin",
+    "keywords": ["scheduler","cakephp","plugin", "cron"],
+    "homepage": "https://github.com/half2me/scheduler",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5.9",
+        "cakephp/cakephp": "^3.3.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Scheduler\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Scheduler\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}
