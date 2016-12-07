@@ -33,7 +33,7 @@ Configure::write('Scheduler.jobs', [
             'db',
         ],
         'dependsOn' => [
-            'Newsletters', // if running, wait for these other tasks to finish
+            'Newsletters', // if these other tasks are running, wait for them to finish first
         ],
         'parallel' => true, // multiple instances of this task can be run simultaneously
     ]
