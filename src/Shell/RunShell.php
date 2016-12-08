@@ -56,7 +56,15 @@ class RunShell extends Shell
                 });
 
                 if ($entity) {
-                    //TODO: Run the task
+                    try {
+                        $this->dispatchShell([
+                            'command' => @$job['className'] ?: $name,
+                            'extra' => @$job['extra'] ?: [],
+                        ]);
+                    } catch (\Exception $e) {
+                        //TODO: log this?
+                    }
+
                     $entity->running = false;
                     $entity->last_run_finished = Time::now();
                     $this->table->save($entity);

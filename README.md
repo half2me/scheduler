@@ -26,14 +26,9 @@ Configure::write('Scheduler.jobs', [
     ],
     'CleanUp' => [
         'interval' => '15 minutes', // every 15min
-        'className' => 'CleanUpDatabase',
-        'method' => 'clean',
-        'args' => [
-            'regular',
-            'db',
-        ],
-        'dependsOn' => [
-            'Newsletters', // if these other tasks are running, wait for them to finish first
+        'command' => 'CleanUpDatabase clean',
+        'extra' => [
+            'foo' => 'bar',
         ],
         'timeout' => '15 minutes', // if task has not finished after 15min it will be aborted
     ]
