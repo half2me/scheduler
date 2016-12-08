@@ -22,10 +22,10 @@ Here is an example configuration to run 2 tasks:
 // For example in your bootstrap.php
 Configure::write('Scheduler.jobs', [
     'Newsletters' => [
-        'interval' => 'PT15M',
+        'interval' => '2 hours',
     ],
     'CleanUp' => [
-        'interval' => 'PT15M', // every 15min
+        'interval' => '15 minutes', // every 15min
         'className' => 'CleanUpDatabase',
         'method' => 'clean',
         'args' => [
@@ -35,7 +35,7 @@ Configure::write('Scheduler.jobs', [
         'dependsOn' => [
             'Newsletters', // if these other tasks are running, wait for them to finish first
         ],
-        'parallel' => true, // multiple instances of this task can be run simultaneously
+        'timeout' => '15 minutes', // if task has not finished after 15min it will be aborted
     ]
 ]);
 ```
