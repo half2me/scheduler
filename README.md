@@ -1,5 +1,9 @@
 # An advanced scheduler plugin for CakePHP
 
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.txt)
+[![Total Downloads](https://img.shields.io/packagist/dt/halftome/scheduler.svg?style=flat-square)](https://packagist.org/packages/halftome/scheduler)
+[![Latest Stable Version](https://img.shields.io/packagist/v/halftome/scheduler.svg?style=flat-square&label=stable)](https://packagist.org/packages/halftome/scheduler)
+
 ## Installation
 
 You can install this plugin into your CakePHP application using [composer](http://getcomposer.org).
