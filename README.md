@@ -9,6 +9,10 @@ The recommended way to install composer packages is:
 ```
 composer halftome/scheduler
 ```
+Setup the database with migrations:
+```
+bin/cake migrations migrate -p Scheduler
+```
 
 ## Usage
 The scheduler will only work if it is invoked, and will only be as precise as the interval it is invoked with.
@@ -22,7 +26,7 @@ Here is an example configuration to run 2 tasks:
 // For example in your bootstrap.php
 Configure::write('Scheduler.jobs', [
     'Newsletters' => [
-        'interval' => '2 hours',
+        'interval' => '2 weeks',
     ],
     'CleanUp' => [
         'interval' => '15 minutes', // every 15min
@@ -31,6 +35,9 @@ Configure::write('Scheduler.jobs', [
             'foo' => 'bar',
         ],
         'timeout' => '15 minutes', // if task has not finished after 15min it will be aborted
-    ]
+    ],
+    'QuotaCheck' => [
+        'interval' => '6 hours',
+    ],
 ]);
 ```
