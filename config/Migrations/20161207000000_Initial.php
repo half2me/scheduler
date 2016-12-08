@@ -31,6 +31,7 @@ class Initial extends AbstractMigration
                 'default' => null,
                 'null' => false,
             ])
+            ->addIndex(['name'], ['unique' => true])
             ->create();
     }
 }
